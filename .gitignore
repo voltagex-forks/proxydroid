@@ -14,3 +14,4 @@ classes/
 .gradle
 build/
 app/release
+output/

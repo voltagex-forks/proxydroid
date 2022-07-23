@@ -8,5 +8,6 @@ RUN yes | /opt/cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_SDK_ROOT --licen
 COPY . /src/proxydroid/
 WORKDIR /src/proxydroid
 
-RUN sh gradlew --no-daemon
+RUN sh gradlew --no-daemon dependencies
+
 RUN sh gradlew build -x lint -x test --no-daemon

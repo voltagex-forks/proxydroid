@@ -310,13 +310,6 @@ public class ProxyDroid extends PreferenceActivity
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.proxydroid_preference);
 
-	if (layout != null) {
-        // Lookup your LinearLayout assuming it’s been given
-        // the attribute android:id="@+id/mainLayout"
-        ViewParent parent = getListView().getParent();
-        LinearLayout layout = getLayout(parent);
-
-        }
 
         hostText = (EditTextPreference) findPreference("host");
         portText = (EditTextPreference) findPreference("port");
@@ -410,8 +403,6 @@ public class ProxyDroid extends PreferenceActivity
      */
     @Override
     public void onDestroy() {
-
-        if (adView != null) adView.destroy();
 
         if (ssidReceiver != null) unregisterReceiver(ssidReceiver);
 
